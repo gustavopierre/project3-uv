@@ -7,6 +7,8 @@ This demonstrates a simple CLI tool with external dependencies (click, requests)
 import click
 import requests
 
+from uv_learning import __version__ as package_version
+
 
 @click.group()
 @click.version_option()
@@ -42,10 +44,8 @@ def fetch(url):
 @cli.command()
 def info():
     """Display project information."""
-    from uv_learning import __version__
-    
     click.echo("UV Learning Project")
-    click.echo(f"Version: {__version__}")
+    click.echo(f"Version: {package_version}")
     click.echo("\nThis project demonstrates:")
     click.echo("  • Using uv for Python package management")
     click.echo("  • Managing dependencies with pyproject.toml")
