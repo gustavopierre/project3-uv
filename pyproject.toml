@@ -1,0 +1,30 @@
+[project]
+name = "uv-learning"
+version = "0.1.0"
+description = "A project to learn and demonstrate uv package manager capabilities"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "requests>=2.31.0",
+    "click>=8.1.0",
+]
+
+[project.scripts]
+uv-learning = "uv_learning.main:cli"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "ruff>=0.1.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
